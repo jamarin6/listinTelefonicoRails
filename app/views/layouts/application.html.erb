@@ -50,7 +50,7 @@
 	<% end %>
 
 	<!-- si hay current_user muestro su email, y si no lo hay muestro botone log-in y log-up -->
-	<div class="margin-to-top">
+	<div class="margen-arriba">
 		<% if current_user %>
 	      <%= link_to "#{current_user.email}", user_contacts_path(current_user) %><br>
 	      <%= link_to "Exit", destroy_user_session_path, method: :delete %>

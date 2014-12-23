@@ -39,49 +39,49 @@
         <%# end %>
       </p>-->
 
-      <p class="centra">
+      <!--<p class="centra">  QUITO ESTO X LA NUEVA VERSION A DEVISE no mostrar
 
-        <% if @user.padre.nil? %> <!-- si no hay padre de ese user es un superUser -->
-          <s><b>Father</b></s><b> (Super User)</b>
-        <% else %> <!--si hay padre se pinta su nombre -->
-          <b>Father:</b>
-          <%= link_to @user.padre.nombre, user_path(@user.padre.id) %>
+        <%# if @user.padre.nil? %> si no hay padre de ese user es un superUser -->
+          <!--<s><b>Father</b></s><b> (Super User)</b>
+        <%# else %> si hay padre se pinta su nombre -->
+        <!--  <b>Father:</b>
+          <%#= link_to @user.padre.nombre, user_path(@user.padre.id) %>
           <%#= debugger %>
-        <% end %>
-      </p>
+        <%# end %>
+      </p>-->
 
       <p class="centra">
         <b>Contacts:</b>
         <%= link_to "#{@user.contacts.count} numbers", user_contacts_path(@user) %><%= " " %>
       </p>
+      <!--
       <div class="box-blue-round">
         <p class="centra ">
-          <b>----- Created sons: -----</b>
+          <b> Created sons: </b>
 
-          <% if @user.hijos.count == 0 %> <!-- si no tiene hijos lo informo -->
-            <h3 class="centra">----- No tiene hijos -----</h3>
-          <% else %>
-            <ol class="noventa">
-              <% @user.hijos.each do |son| %>
-                <% if !(son.id == @user.id) %><!-- xa q no muestre el superUser a él mismo como hijo (xq su id es = al del hijo) -->
-                  <li class="centra"><%= link_to son.nombre, user_path(:id => son.id, :padre_id => son.padre_id) %></li>
-                <% end %>
-              <% end %>
+           #if @user.hijos.count == 0   si no tiene hijos lo informo
+            <h3 class="centra"> No tiene hijos </h3>
+          else 
+           <ol class="noventa">
+              <%# @user.hijos.each do |son| %>
+                <%# if !(son.id == @user.id) %> xa q no muestre el superUser a él mismo como hijo (xq su id es = al del hijo) 
+                  <li class="centra"><%#= link_to son.nombre, user_path(:id => son.id, :padre_id => son.padre_id) %></li>
+                <%# end %>
+              <%# end %>
             </ol>
-          <% end %>
+           end
         </p>
-        </div>
+        </div> 
         <div class="centra box-blue-round">
-          <%= link_to 'Add New User', new_user_path(:padre_id => @user.id) %>
-        </div>
-        <p class="centra"><strong>---------------------------------</strong></p>
-        
+          <%#= link_to 'Add New User', new_user_path(:padre_id => @user.id) %>
+        </div> al meter devise quito esto, se añaden user desde inicio con devise -->
+        <p class="centra"><strong>---------------------------------</strong></p>   
       </div>
   </div>
 </div>
 
 <div class="centra">
   <%= link_to 'Contacts', user_contacts_path(@user) %> - 
-  <%= link_to 'Edit', edit_user_path(@user) %> - 
-  <%= link_to 'BackToAllUsers', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> 
+  <!-- <%#= link_to 'BackToAllUsers', users_path %> al meter devise quito esto, no lista de users-->
 </div>

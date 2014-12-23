@@ -1,30 +1,43 @@
-       admin_users GET    /admin/users(.:format)                      admin/users#index
-                   POST   /admin/users(.:format)                      admin/users#create
-    new_admin_user GET    /admin/users/new(.:format)                  admin/users#new
-   edit_admin_user GET    /admin/users/:id/edit(.:format)             admin/users#edit
-        admin_user GET    /admin/users/:id(.:format)                  admin/users#show
-                   PUT    /admin/users/:id(.:format)                  admin/users#update
-                   DELETE /admin/users/:id(.:format)                  admin/users#destroy
-    admin_contacts GET    /admin/contacts(.:format)                   admin/contacts#index
-                   POST   /admin/contacts(.:format)                   admin/contacts#create
- new_admin_contact GET    /admin/contacts/new(.:format)               admin/contacts#new
-edit_admin_contact GET    /admin/contacts/:id/edit(.:format)          admin/contacts#edit
-     admin_contact GET    /admin/contacts/:id(.:format)               admin/contacts#show
-                   PUT    /admin/contacts/:id(.:format)               admin/contacts#update
-                   DELETE /admin/contacts/:id(.:format)               admin/contacts#destroy
-     user_contacts GET    /users/:user_id/contacts(.:format)          users/contacts#index
-                   POST   /users/:user_id/contacts(.:format)          users/contacts#create
-  new_user_contact GET    /users/:user_id/contacts/new(.:format)      users/contacts#new
- edit_user_contact GET    /users/:user_id/contacts/:id/edit(.:format) users/contacts#edit
-      user_contact GET    /users/:user_id/contacts/:id(.:format)      users/contacts#show
-                   PUT    /users/:user_id/contacts/:id(.:format)      users/contacts#update
-                   DELETE /users/:user_id/contacts/:id(.:format)      users/contacts#destroy
-             users GET    /users(.:format)                            users#index
-                   POST   /users(.:format)                            users#create
-          new_user GET    /users/new(.:format)                        users#new
-         edit_user GET    /users/:id/edit(.:format)                   users#edit
-              user GET    /users/:id(.:format)                        users#show
-                   PUT    /users/:id(.:format)                        users#update
-                   DELETE /users/:id(.:format)                        users#destroy
-     welcome_index GET    /welcome/index(.:format)                    welcome#index
-              root        /                                           welcome#index
+        new_user_session GET    /users/sign_in(.:format)                    devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                    devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                   devise/sessions#destroy
+           user_password POST   /users/password(.:format)                   devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)               devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)              devise/passwords#edit
+                         PUT    /users/password(.:format)                   devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                     devise/registrations#cancel
+       user_registration POST   /users(.:format)                            devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)                    devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                       devise/registrations#edit
+                         PUT    /users(.:format)                            devise/registrations#update
+                         DELETE /users(.:format)                            devise/registrations#destroy
+             admin_users GET    /admin/users(.:format)                      admin/users#index
+                         POST   /admin/users(.:format)                      admin/users#create
+          new_admin_user GET    /admin/users/new(.:format)                  admin/users#new
+         edit_admin_user GET    /admin/users/:id/edit(.:format)             admin/users#edit
+              admin_user GET    /admin/users/:id(.:format)                  admin/users#show
+                         PUT    /admin/users/:id(.:format)                  admin/users#update
+                         DELETE /admin/users/:id(.:format)                  admin/users#destroy
+          admin_contacts GET    /admin/contacts(.:format)                   admin/contacts#index
+                         POST   /admin/contacts(.:format)                   admin/contacts#create
+       new_admin_contact GET    /admin/contacts/new(.:format)               admin/contacts#new
+      edit_admin_contact GET    /admin/contacts/:id/edit(.:format)          admin/contacts#edit
+           admin_contact GET    /admin/contacts/:id(.:format)               admin/contacts#show
+                         PUT    /admin/contacts/:id(.:format)               admin/contacts#update
+                         DELETE /admin/contacts/:id(.:format)               admin/contacts#destroy
+           user_contacts GET    /users/:user_id/contacts(.:format)          users/contacts#index
+                         POST   /users/:user_id/contacts(.:format)          users/contacts#create
+        new_user_contact GET    /users/:user_id/contacts/new(.:format)      users/contacts#new
+       edit_user_contact GET    /users/:user_id/contacts/:id/edit(.:format) users/contacts#edit
+            user_contact GET    /users/:user_id/contacts/:id(.:format)      users/contacts#show
+                         PUT    /users/:user_id/contacts/:id(.:format)      users/contacts#update
+                         DELETE /users/:user_id/contacts/:id(.:format)      users/contacts#destroy
+                   users GET    /users(.:format)                            users#index
+                         POST   /users(.:format)                            users#create
+                new_user GET    /users/new(.:format)                        users#new
+               edit_user GET    /users/:id/edit(.:format)                   users#edit
+                    user GET    /users/:id(.:format)                        users#show
+                         PUT    /users/:id(.:format)                        users#update
+                         DELETE /users/:id(.:format)                        users#destroy
+           welcome_index GET    /welcome/index(.:format)                    welcome#index
+                    root        /                                           welcome#index

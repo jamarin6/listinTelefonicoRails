@@ -25,7 +25,7 @@
 			<!--<a href="#">All Contacts</a>--></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="http://www.paginasamarillas.es/"><i class="fa fa-phone blue"></i> Paginas Amarillas</a></li>
+	        <li><a href="http://www.paginasamarillas.es/"><i class="fa fa-phone blue fa-spin"></i> Paginas Amarillas</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container -->
@@ -43,6 +43,22 @@
 		</script>-->
 	<% end %>
 
+	<% if alert %> <!-- alertas -->
+		<div class="notification-box col-xs-3 col-sm-3 col-md-3 col-lg-3 box-red-round" id="notification_box">
+			<p class="fa fa-info-circle" id="alert"><%= alert %></p>
+		</div>
+	<% end %>
+
+	<!-- si hay current_user muestro su email, y si no lo hay muestro botone log-in y log-up -->
+	<div class="margin-top">
+		<% if current_user %>
+	      <%= link_to "#{current_user.email}", user_contacts_path(current_user) %>
+	      <%= link_to "Exit", destroy_user_session_path, method: :delete %>
+	  	<% else %>
+		  <%= link_to "SingIn", new_user_session_path %>
+	      <%= link_to "SingUp", new_user_registration_path %>
+	  	<% end %>
+  	</div>
 <%= yield %>
 <br><br><br>
 

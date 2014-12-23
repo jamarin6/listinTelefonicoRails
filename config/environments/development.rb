@@ -37,4 +37,7 @@ ListinRoR::Application.configure do
 
   # gem 'letter-opener' errors visualitation
   config.action_mailer.delivery_method = :letter_opener
+
+  # defined default url options (devise)
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

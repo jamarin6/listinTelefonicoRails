@@ -1,0 +1,63 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group"> <!-- Nombre -->
+    <%= f.label :nombre, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :nombre, :class => "form-control", :autofocus => true %>
+    </div>
+  </div>
+
+  <div class="form-group"> <!-- Apellido 1 -->
+    <%= f.label :ap1, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :ap1, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group"> <!-- Apellido 2 -->
+    <%= f.label :ap2, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :ap2, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group"> <!-- Fecha Nacimiento -->
+    <%= f.label :fechaNac, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%#= f.date_select :fechaNac, {:class => "select birthday"}    %>
+        <%= f.date_select(:fechaNac, { start_year: (Time.now - 100.year).year, end_year: Time.now.year}, {:class => "form-control select-date"}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+	  <%= f.label :email, :class => "col-sm-2 control-label" %>
+	  <div class="col-sm-10">
+	  	<%= f.email_field :email, :class => "form-control" %>
+	  </div>
+  </div>
+
+  <div class="form-group">
+  	<%= f.label :password, :class => "col-sm-2 control-label" %>
+  	<div class="col-sm-10">
+  		<%= f.password_field :password, :class => "form-control" %>
+  	</div>
+  </div>
+
+  <div class="form-group">
+  	<%= f.label :password_confirmation, :class => "col-sm-2 control-label" %>
+  	<div class="col-sm-10">
+  		<%= f.password_field :password_confirmation, :class => "form-control" %>
+  	</div>
+  </div>
+
+  <div class="form-group">
+  	<div class="col-sm-offset-2 col-sm-10">
+       <%= f.submit "Sign up", :class => "btn btn-default" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

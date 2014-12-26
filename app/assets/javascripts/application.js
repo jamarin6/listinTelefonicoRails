@@ -15,4 +15,4 @@
 //= require bootstrap
 //= require_tree .
 
-//setTimeout(function(){ $("#notification_box").fadeOut(3000);}, 3000); 
+setTimeout(function(){ $("#notification_box").fadeOut(3000);}, 3000); 

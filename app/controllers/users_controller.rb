@@ -67,11 +67,3 @@ class UsersController < ApplicationController
     @users_empty = (User.count == 0)
   end
 end
-
-
-# error al subir a heroku
-#remote:        Warning. Error encountered while saving cache /tmp/build_9b3ce5c431c5cf4726a2f8d6d5a4c38c/tmp/cache/sass/0b0be0baa1fe15f0a822daba2d7d620fc58b89f1/users.css.scssc: can't dump anonymous class #<Class:0x007f81b678e058>
-#remote:        Compiled admin/users.css  (3ms)  (pid 543)
-#remote:        Warning. Error encountered while saving cache /tmp/build_9b3ce5c431c5cf4726a2f8d6d5a4c38c/tmp/cache/sass/08bd85ec290f1f7669099b57515832cf5f66a692/contacts.css.scssc: can't dump anonymous class #<Class:0x007f81b678e058>
-#remote:        Compiled contacts.css  (3ms)  (pid 543)
-#remote:        Warning. Error encountered while saving cache /tmp/build_9

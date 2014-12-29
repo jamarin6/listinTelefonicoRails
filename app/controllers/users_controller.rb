@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :set_users_empty, :only=>[:index, :create, :update] #aunque solo lo utilizo en 'create' pero me vale de buen ejemplo
+  before_filter :set_user, :except=>[:index, :show, :new, :create] #otra manera de hacerlo aqui se usa el :set_user en edit, update y destroy
   
   def index
     @users = User.order(:nombre).page params[:page]
@@ -15,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def create
@@ -38,8 +38,6 @@ class UsersController < ApplicationController
   end # end del create
 
   def update
-    @user = User.find(params[:id])
-
     if @user.update_attributes(params[:user].except(:padre_id)) # except es para q no me cambien el padre_id del user
       redirect_to @user, notice: ' User was successfully updated.'
     else
@@ -48,7 +46,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     # compruebo q no tenga hijos el user
     children_empty = User.where(padre_id: @user.id).count == 0 #será true si es = 0, osea si no tiene hijos
     
@@ -66,12 +63,8 @@ class UsersController < ApplicationController
   def set_users_empty 
     @users_empty = (User.count == 0)
   end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
-
-
-# error al subir a heroku
-#remote:        Warning. Error encountered while saving cache /tmp/build_9b3ce5c431c5cf4726a2f8d6d5a4c38c/tmp/cache/sass/0b0be0baa1fe15f0a822daba2d7d620fc58b89f1/users.css.scssc: can't dump anonymous class #<Class:0x007f81b678e058>
-#remote:        Compiled admin/users.css  (3ms)  (pid 543)
-#remote:        Warning. Error encountered while saving cache /tmp/build_9b3ce5c431c5cf4726a2f8d6d5a4c38c/tmp/cache/sass/08bd85ec290f1f7669099b57515832cf5f66a692/contacts.css.scssc: can't dump anonymous class #<Class:0x007f81b678e058>
-#remote:        Compiled contacts.css  (3ms)  (pid 543)
-#remote:        Warning. Error encountered while saving cache /tmp/build_9

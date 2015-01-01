@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_filter :authenticate_user!
   before_filter :set_users_empty, :only=>[:index, :create, :update] #aunque solo lo utilizo en 'create' pero me vale de buen ejemplo
   
   def index

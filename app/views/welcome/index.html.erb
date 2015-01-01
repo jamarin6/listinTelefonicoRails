@@ -45,10 +45,15 @@
 				<br><%= link_to " my contacts", user_contacts_path(current_user), method: :get, :class => 'btn btn-primary btn-lg btn-block fa fa-users fa-2x' %>	
 			</div>
 		</div>
-	<% else %> <!-- de lo contrario le doy la opción de registrarse con un botón signUp -->
+	<% else %>  <!--de lo contrario le doy la opción de registrarse con un botón signUp -->
 	  <%= link_to "SingIn", new_user_session_path %>
     <%= link_to "SingUp", new_user_registration_path %>
-	<% end %>
+	<% end %><br>
+	<!--<div class="row">
+	  <div class="col-lg-12">
+		<%#= link_to " users", users_path, :class => 'btn btn-primary btn-lg btn-block fa fa-users fa-2x' %>
+	  </div>
+	</div>-->
 </div>
 
 <!--

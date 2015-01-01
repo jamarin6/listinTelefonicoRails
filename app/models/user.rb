@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+
   has_many :contacts, :dependent => :destroy
 
   belongs_to :padre, :class_name => "User" # asi le digo q un User tiene un padre q es un User

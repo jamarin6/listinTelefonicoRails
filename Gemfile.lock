@@ -102,8 +102,8 @@ GEM
       railties (>= 3.0.0, < 5.0.0)
     mime-types (1.25.1)
     multi_json (1.10.1)
-    mysql2 (0.3.17)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyglot (0.3.5)
     rack (1.4.5)
     rack-cache (1.2)
@@ -207,7 +207,7 @@ DEPENDENCIES
   kaminari-bootstrap
   letter_opener
   meta_request
-  mysql2
+  pg
   rails (= 3.2.16)
   rails-erd
   rails_12factor

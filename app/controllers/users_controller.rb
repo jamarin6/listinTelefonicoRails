@@ -63,11 +63,8 @@ class UsersController < ApplicationController
   def set_users_empty 
     @users_empty = (User.count == 0)
   end
-<<<<<<< HEAD
-=======
-
+ 
   def set_user
     @user = User.find(params[:id])
   end
->>>>>>> cafa3782cb57a885b01df9702b252d0ba4890ccc
 end

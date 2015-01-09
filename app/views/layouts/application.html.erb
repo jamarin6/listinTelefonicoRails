@@ -55,14 +55,18 @@
 	<!-- si hay current_user muestro su email, y si no lo hay muestro botone log-in y log-up -->
 	<div class="margen-arriba">
 		<% if current_user %>
-	      <%= link_to ".#{current_user.email}", user_contacts_path(current_user) %><br>
-	      <%= link_to "Exit", destroy_user_session_path, method: :delete %>
-	  	<% else %>
-		  <%= link_to "SingIn", new_user_session_path %>
-	      <%= link_to "SingUp", new_user_registration_path %>
-	  	<% end %>
-  	</div>
+    	<div class="col-lg-offset-10 col-lg-2">
+      	<%= link_to " #{current_user.email}", user_contacts_path(current_user), :class => 'btn btn-primary btn-xs' %><br>
+      	<%= link_to "Exit", destroy_user_session_path, method: :delete, :class => 'btn btn-primary btn-xs' %>
+    	</div>
+  	<% else %>
+	  <%#= link_to "SingIn", new_user_session_path %>
+      <%#= link_to "SingUp", new_user_registration_path %>
+  	<% end %>
+	</div>
+
 <%= yield %>
+
 <br><br><br>
 
 																		<!-- footer -->

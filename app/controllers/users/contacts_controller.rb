@@ -1,5 +1,6 @@
 class Users::ContactsController < ApplicationController
   before_filter :set_user
+  
 
   def index
     @contacts = @user.contacts.order(:nombre).page params[:page]

@@ -31,10 +31,6 @@
 	  </div><!-- /.container -->
 	</nav><br><br>
 																		<!-- fin header -->
-
-	<!-- <p class="notice"><%= notice %></p>
-         <p class="alert"><%= alert %></p> -->
-
 	<% if notice %> <!-- notificaciones -->
 		<div class="notification-box col-xs-3 col-sm-3 col-md-3 col-lg-3 box-blue-round" id="notification_box">
 			<p class="fa fa-info-circle" id="notice"><%= notice %></p>
@@ -59,16 +55,11 @@
       	<%= link_to " #{current_user.email}", user_contacts_path(current_user), :class => 'btn btn-primary btn-xs' %><br>
       	<%= link_to "Exit", destroy_user_session_path, method: :delete, :class => 'btn btn-primary btn-xs' %>
     	</div>
-  	<% else %>
-	  <%#= link_to "SingIn", new_user_session_path %>
-      <%#= link_to "SingUp", new_user_registration_path %>
   	<% end %>
 	</div>
 
 <%= yield %>
-
 <br><br><br>
-
 																		<!-- footer -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom myFooter opacidad" role="navigation">
   <div class="container">
@@ -84,6 +75,5 @@
   </div>
 </nav>
 													   				<!-- fin footer -->
-
 </body>
 </html>
